@@ -1,0 +1,8 @@
+.container :global(.adm-list-body) {
+  padding-left: 12px;
+}
+
+.postPic {
+  width: 100%;
+  height: 100%;
+}
