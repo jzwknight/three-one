@@ -11,7 +11,7 @@ import {
 import { useRouter } from "next/navigation";
 import { RefObject, useState } from "react";
 import { UniversityInfoList, basicColumns } from "./constant";
-import postPic from "@/assets/post.png"
+import postPic from "@/assets/post.png";
 
 import styles from "../styles/index.module.css";
 
@@ -52,9 +52,10 @@ export default function Home() {
   if (showUniversity) {
     return (
       <List>
-        {acceptable.map((uni) => {
+        {acceptable.map((uni, key) => {
           return (
             <List.Item
+              key={uni.name}
               onClick={() => {
                 const { name1, name2, name3, name4, combination, predict } =
                   values;
@@ -163,7 +164,7 @@ export default function Home() {
           trigger="onConfirm"
           style={{
             "--adm-font-size-7": "17px",
-          }}
+          } as any}
           onClick={(e, datePickerRef: RefObject<DatePickerRef>) => {
             datePickerRef.current?.open();
           }}
@@ -176,7 +177,7 @@ export default function Home() {
           name="predict"
           style={{
             "--adm-font-size-7": "17px",
-          }}
+          } as any}
           label="高考预估分"
           help="大概的分数"
           rules={[{ required: true }]}
