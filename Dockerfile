@@ -28,7 +28,7 @@ RUN npm install
 COPY . /app
 
 # npm 安装依赖
-RUN npm build
+RUN npm run build
 
 # 执行启动命令.
 # 写多行独立的CMD命令是错误写法！只有最后一行CMD命令会被执行，之前的都会被忽略，导致业务报错。
