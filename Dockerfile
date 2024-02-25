@@ -6,10 +6,10 @@ FROM node:18-slim
 # RUN apk add tzdata && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo Asia/Shanghai > /etc/timezone
 
 # 使用 HTTPS 协议访问容器云调用证书安装
-RUN apk add ca-certificates
+# RUN apk add ca-certificates
 
 # 安装依赖包，如需其他依赖包，请到alpine依赖包管理(https://pkgs.alpinelinux.org/packages?name=php8*imagick*&branch=v3.13)查找。
-RUN apk add --update --no-cache nodejs npm
+# RUN apk add --update --no-cache nodejs npm
 
 # # 指定工作目录
 WORKDIR /app
