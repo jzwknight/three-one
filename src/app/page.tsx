@@ -39,7 +39,10 @@ export default function Home() {
         const points = calcuate(a, b, c, d);
         const condition1 = points > condition;
         const condition2 = major?.some((m) => {
-          return m.condition(combination);
+          if (m.condition) {
+            return m.condition(combination);
+          }
+          return false;
         });
         return condition1 && condition2;
       });
