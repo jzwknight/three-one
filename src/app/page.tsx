@@ -162,9 +162,11 @@ export default function Home() {
           name="combination"
           label="选科组合"
           trigger="onConfirm"
-          style={{
-            "--adm-font-size-7": "17px",
-          } as any}
+          style={
+            {
+              "--adm-font-size-7": "17px",
+            } as any
+          }
           onClick={(e, datePickerRef: RefObject<DatePickerRef>) => {
             datePickerRef.current?.open();
           }}
@@ -175,9 +177,11 @@ export default function Home() {
         </Form.Item>
         <Form.Item
           name="predict"
-          style={{
-            "--adm-font-size-7": "17px",
-          } as any}
+          style={
+            {
+              "--adm-font-size-7": "17px",
+            } as any
+          }
           label="高考预估分"
           help="大概的分数"
           rules={[{ required: true }]}
