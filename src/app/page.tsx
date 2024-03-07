@@ -35,9 +35,12 @@ export default function Home() {
       });
     } else {
       const _acceptable = UniversityInfoList.filter((university) => {
-        const { calcuate, name, condition, major } = university;
-        const points = calcuate(a, b, c, d);
-        const condition1 = points > condition;
+        const { calculate, specialCalculate, name, condition, major } = university;
+        
+        // const points =  calcuate(a, b, c, d);
+        // 如果有 specialCalculate，就计算 specialCalculate 的逻辑，否则计算 calculate 是否大于 condition
+        const condition1 = specialCalculate ? specialCalculate(a,b,c,d) : calculate(a, b, c, d) > condition;
+
         const condition2 = major?.some((m) => {
           if (m.condition) {
             return m.condition(combination);

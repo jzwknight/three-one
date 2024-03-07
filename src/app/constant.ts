@@ -53,7 +53,7 @@ export const UniversityInfoList = [
     name: "浙江工业大学",
     /* 判断分 */
     condition: 20,
-    calcuate: (a: number, b: number, c: number, d: any) => {
+    calculate: (a: number, b: number, c: number, d: any) => {
       return a * 10 + b * 5 + c * 2;
     },
     major: [
@@ -525,7 +525,7 @@ export const UniversityInfoList = [
     name: "杭州师范大学",
     /* 判断分 */
     condition: 20,
-    calcuate: (a: number, b: number, c: number, d: any) => {
+    calculate: (a: number, b: number, c: number, d: any) => {
       return a * 10 + b * 5 + c * 2;
     },
     major: [
@@ -599,7 +599,7 @@ export const UniversityInfoList = [
   {
     name: "浙江师范大学",
     condition: 76,
-    calcuate: (a: number, b: number, c: number, d: any) => {
+    calculate: (a: number, b: number, c: number, d: any) => {
       return a * 10 + b * 8 + c * 4;
     },
     major: [
@@ -734,7 +734,7 @@ export const UniversityInfoList = [
   {
     name: "宁波大学",
     condition: 82,
-    calcuate: (a: number, b: number, c: number, d: any) => {
+    calculate: (a: number, b: number, c: number, d: any) => {
       return a * 10 + b * 8 + c * 4;
     },
     major: [
@@ -1211,7 +1211,7 @@ export const UniversityInfoList = [
   {
     name: "宁波诺丁汉大学",
     condition: 0,
-    calcuate: (a: number, b: number, c: number, d: any) => {
+    calculate: (a: number, b: number, c: number, d: any) => {
       return a * 10 + b * 7 + c * 4;
     },
     maior: [
@@ -1438,7 +1438,7 @@ export const UniversityInfoList = [
   {
     name: "杭州电子科技大学",
     condition: 110,
-    calcuate: (a: number, b: number, c: number, d: any) => {
+    calculate: (a: number, b: number, c: number, d: any) => {
       return a * 15 + b * 10 + c * 5;
     },
     maior: [
@@ -1895,7 +1895,7 @@ export const UniversityInfoList = [
   {
     name: "浙江工商大学",
     condition: 60,
-    calcuate: (a: number, b: number, c: number, d: any) => {
+    calculate: (a: number, b: number, c: number, d: any) => {
       return a * 10 + b * 5 + c * 0;
     },
     major: [
@@ -2338,7 +2338,7 @@ export const UniversityInfoList = [
   {
     name: "浙江理工大学",
     condition: 0,
-    calcuate: (a: number, b: number, c: number, d: any) => {
+    calculate: (a: number, b: number, c: number, d: any) => {
       return a * 10 + b * 8 + c * 4;
     },
     major: [
@@ -2627,7 +2627,7 @@ export const UniversityInfoList = [
   {
     name: "温州大学",
     condition: 100,
-    calcuate: (a: number, b: number, c: number, d: any) => {
+    calculate: (a: number, b: number, c: number, d: any) => {
       return a * 15 + b * 10 + c * 5;
     },
     major: [
@@ -3154,7 +3154,7 @@ export const UniversityInfoList = [
   {
     name: "浙江财经大学",
     condition: 85,
-    calcuate: (a: number, b: number, c: number, d: any) => {
+    calculate: (a: number, b: number, c: number, d: any) => {
       return a * 15 + b * 9 + c * 3;
     },
     major: [
@@ -3555,7 +3555,7 @@ export const UniversityInfoList = [
   {
     name: "温州医科大学",
     condition: 91,
-    calcuate: (a: number, b: number, c: number, d: number) => {
+    calculate: (a: number, b: number, c: number, d: number) => {
       return a * 10 + b * 9 + c * 7 + d * 4;
     },
     major: [
@@ -3830,7 +3830,7 @@ export const UniversityInfoList = [
   {
     name: "中国计量大学",
     condition: 110,
-    calcuate: (a: number, b: number, c: number, d: any) => {
+    calculate: (a: number, b: number, c: number, d: any) => {
       return a * 20 + b * 10 + c * 0;
     },
     major: [
@@ -4231,7 +4231,7 @@ export const UniversityInfoList = [
   {
     name: "浙江中医药大学",
     condition: 61,
-    calcuate: (a: number, b: number, c: number, d: any) => {
+    calculate: (a: number, b: number, c: number, d: any) => {
       return a * 10 + b * 7 + c * 4;
     },
     major: [
@@ -4380,7 +4380,7 @@ export const UniversityInfoList = [
   {
     name: "浙江农林大学",
     condition: 90,
-    calcuate: (a: number, b: number, c: number, d: any) => {
+    calculate: (a: number, b: number, c: number, d: any) => {
       return a * 15 + b * 10 + c * 5;
     },
     major: [
@@ -4963,7 +4963,7 @@ export const UniversityInfoList = [
   {
     name: "浙江海洋大学",
     condition: 80,
-    calcuate: (a: number, b: number, c: number, d: number) => {
+    calculate: (a: number, b: number, c: number, d: number) => {
       return a * 15 + b * 10 + c * 6 + d * 1;
     },
     major: [
@@ -5084,8 +5084,12 @@ export const UniversityInfoList = [
   {
     name: "浙江科技大学",
     condition: 50,
-    calcuate: (a: number, b: number, c: number, d: any) => {
+    calculate: (a: number, b: number, c: number, d: any) => {
       return a * 15 + b * 10 + c * 5;
+    },
+    // 不一样的计算方式
+    specialCalculate: (a: number, b: number, c: number, d: any) => {
+      return a + b >= 6;
     },
     major: [
       {
@@ -5233,7 +5237,7 @@ export const UniversityInfoList = [
   {
     name: "丽水学院",
     condition: 35,
-    calcuate: (a: number, b: number, c: number, d: number) => {
+    calculate: (a: number, b: number, c: number, d: number) => {
       return a * 10 + b * 7 + c * 4 + d * 1;
     },
     major: [
@@ -5284,7 +5288,7 @@ export const UniversityInfoList = [
   {
     name: "湖州师范学院",
     condition: 28,
-    calcuate: (a: number, b: number, c: number, d: any) => {
+    calculate: (a: number, b: number, c: number, d: any) => {
       return a * 10 + b * 7 + c * 4;
     },
     major: [
@@ -5537,7 +5541,7 @@ export const UniversityInfoList = [
   {
     name: "嘉兴大学",
     condition: 28,
-    calcuate: (a: number, b: number, c: number, d: any) => {
+    calculate: (a: number, b: number, c: number, d: any) => {
       return a * 10 + b * 7 + c * 4;
     },
     major: [
@@ -5812,7 +5816,7 @@ export const UniversityInfoList = [
   {
     name: "台州学院",
     condition: 48,
-    calcuate: (a: number, b: number, c: number, d: number) => {
+    calculate: (a: number, b: number, c: number, d: number) => {
       return a * 10 + b * 8 + c * 6 + d * 4;
     },
     major: [
@@ -5933,7 +5937,7 @@ export const UniversityInfoList = [
   {
     name: "绍兴文理学院",
     condition: 40,
-    calcuate: (a: number, b: number, c: number, d: number) => {
+    calculate: (a: number, b: number, c: number, d: number) => {
       return a * 10 + b * 8 + c * 6 + d * 4;
     },
     major: [
@@ -6040,7 +6044,7 @@ export const UniversityInfoList = [
   {
     name: "浙江外国语学院",
     condition: 40,
-    calcuate: (a: number, b: number, c: number, d: number) => {
+    calculate: (a: number, b: number, c: number, d: number) => {
       return a * 15 + b * 9 + c * 3 + d * 0;
     },
     major: [
@@ -6189,7 +6193,7 @@ export const UniversityInfoList = [
   {
     name: "宁波工程学院",
     condition: 30,
-    calcuate: (a: number, b: number, c: number, d: any) => {
+    calculate: (a: number, b: number, c: number, d: any) => {
       return a * 10 + b * 5 + c * 3;
     },
     major: [
@@ -6226,7 +6230,7 @@ export const UniversityInfoList = [
   {
     name: "衢州学院",
     condition: 35,
-    calcuate: (a: number, b: number, c: number, d: any) => {
+    calculate: (a: number, b: number, c: number, d: any) => {
       return a * 10 + b * 7 + c * 4;
     },
     major: [
@@ -6277,7 +6281,7 @@ export const UniversityInfoList = [
   {
     name: "浙大城市学院",
     condition: 60,
-    calcuate: (a: number, b: number, c: number, d: any) => {
+    calculate: (a: number, b: number, c: number, d: any) => {
       return a * 10 + b * 8 + c * 6;
     },
     major: [
@@ -6370,7 +6374,7 @@ export const UniversityInfoList = [
   {
     name: "温州肯恩大学",
     condition: 80,
-    calcuate: (a: number, b: number, c: number, d: any) => {
+    calculate: (a: number, b: number, c: number, d: any) => {
       return a * 15 + b * 10 + c * 5;
     },
     major: [
@@ -6589,7 +6593,7 @@ export const UniversityInfoList = [
   {
     name: "浙江万里学院",
     condition: 60,
-    calcuate: (a: number, b: number, c: number, d: number) => {
+    calculate: (a: number, b: number, c: number, d: number) => {
       return a * 12 + b * 9 + c * 6 + d * 4;
     },
     major: [
@@ -6892,7 +6896,7 @@ export const UniversityInfoList = [
   {
     name: "湖州学院",
     condition: 35,
-    calcuate: (a: number, b: number, c: number, d: any) => {
+    calculate: (a: number, b: number, c: number, d: any) => {
       return a * 10 + b * 7 + c * 4;
     },
     major: [
@@ -6943,7 +6947,7 @@ export const UniversityInfoList = [
   {
     name: "嘉兴南湖学院",
     condition: 28,
-    calcuate: (a: number, b: number, c: number, d: any) => {
+    calculate: (a: number, b: number, c: number, d: any) => {
       return a * 10 + b * 7 + c * 3;
     },
     major: [
@@ -7050,7 +7054,7 @@ export const UniversityInfoList = [
   {
     name: "温州理工学院",
     condition: 40,
-    calcuate: (a: number, b: number, c: number, d: any) => {
+    calculate: (a: number, b: number, c: number, d: any) => {
       return a * 10 + b * 8 + c * 4;
     },
     major: [
@@ -7143,7 +7147,7 @@ export const UniversityInfoList = [
   {
     name: "浙大宁波理工学院",
     condition: 62,
-    calcuate: (a: number, b: number, c: number, d: any) => {
+    calculate: (a: number, b: number, c: number, d: any) => {
       return a * 10 + b * 8 + c * 5;
     },
     major: [
@@ -7264,7 +7268,7 @@ export const UniversityInfoList = [
   {
     name: "杭州医学院",
     condition: 85,
-    calcuate: (a: number, b: number, c: number, d: number) => {
+    calculate: (a: number, b: number, c: number, d: number) => {
       return a * 10 + b * 9 + c * 7 + d * 4;
     },
     major: [
@@ -7301,7 +7305,7 @@ export const UniversityInfoList = [
   {
     name: "宁波大学科技学院",
     condition: 0,
-    calcuate: (a: number, b: number, c: number, d: any) => {
+    calculate: (a: number, b: number, c: number, d: any) => {
       return a * 10 + b * 7 + c * 3;
     },
     major: [
@@ -7324,7 +7328,7 @@ export const UniversityInfoList = [
   {
     name: "浙江水利水电学院",
     condition: 0,
-    calcuate: (a: number, b: number, c: number, d: any) => {
+    calculate: (a: number, b: number, c: number, d: any) => {
       return a * 10 + b * 7 + c * 4;
     },
     major: [
@@ -7571,7 +7575,7 @@ export const UniversityInfoList = [
   {
     name: "金华职业技术学院",
     condition: 192,
-    calcuate: (a: number, b: number, c: number, d: number) => {
+    calculate: (a: number, b: number, c: number, d: number) => {
       return a * 30 + b * 25 + c * 21 + d * 18;
     },
     major: [
@@ -7594,7 +7598,7 @@ export const UniversityInfoList = [
   {
     name: "宁波幼儿师范高等学院",
     condition: 210,
-    calcuate: (a: number, b: number, c: number, d: number) => {
+    calculate: (a: number, b: number, c: number, d: number) => {
       return a * 30 + b * 25 + c * 21 + d * 18;
     },
     major: [
@@ -7631,7 +7635,7 @@ export const UniversityInfoList = [
   {
     name: "温州商学院",
     condition: 0,
-    calcuate: (a: number, b: number, c: number, d: number) => {
+    calculate: (a: number, b: number, c: number, d: number) => {
       return a * 12 + b * 10 + c * 8 + d * 6;
     },
     major: [
@@ -7766,7 +7770,7 @@ export const UniversityInfoList = [
   {
     name: "宁波财经学院",
     condition: 0,
-    calcuate: (a: number, b: number, c: number, d: number) => {
+    calculate: (a: number, b: number, c: number, d: number) => {
       return a * 15 + b * 9 + c * 6 + d * 4;
     },
     major: [
@@ -7887,7 +7891,7 @@ export const UniversityInfoList = [
   {
     name: "浙江越秀外国语学院",
     condition: 8,
-    calcuate: (a: number, b: number, c: number, d: number) => {
+    calculate: (a: number, b: number, c: number, d: number) => {
       return a * 10 + b * 8 + c * 6 + d * 4;
     },
     major: [
