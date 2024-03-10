@@ -35,11 +35,14 @@ export default function Home() {
       });
     } else {
       const _acceptable = UniversityInfoList.filter((university) => {
-        const { calculate, specialCalculate, name, condition, major } = university;
-        
+        const { calculate, specialCalculate, name, condition, major } =
+          university;
+
         // const points =  calcuate(a, b, c, d);
         // 如果有 specialCalculate，就计算 specialCalculate 的逻辑，否则计算 calculate 是否大于 condition
-        const condition1 = specialCalculate ? specialCalculate(a,b,c,d) : calculate(a, b, c, d) > condition;
+        const condition1 = specialCalculate
+          ? specialCalculate(a, b, c, d)
+          : calculate(a, b, c, d) > condition;
 
         const condition2 = major?.some((m) => {
           if (m.condition) {
@@ -57,25 +60,38 @@ export default function Home() {
 
   if (showUniversity) {
     return (
-      <List>
-        {acceptable.map((uni, key) => {
-          return (
-            <List.Item
-              key={uni.name}
-              onClick={() => {
-                const { name1, name2, name3, name4, combination, predict } =
-                  values;
-                push(
-                  `/detail?universityName=${uni.name}&combination=${combination[0]}&a=${name1}&b=${name2}&c=${name3}&d=${name4}&predict=${predict}`
-                );
-              }}
-              extra="点击查看详情"
-            >
-              {uni.name}
-            </List.Item>
-          );
-        })}
-      </List>
+      <>
+        <List>
+          {acceptable.map((uni, key) => {
+            return (
+              <List.Item
+                key={uni.name}
+                onClick={() => {
+                  const { name1, name2, name3, name4, combination, predict } =
+                    values;
+                  push(
+                    `/detail?universityName=${uni.name}&combination=${combination[0]}&a=${name1}&b=${name2}&c=${name3}&d=${name4}&predict=${predict}`
+                  );
+                }}
+                extra="点击查看详情"
+              >
+                {uni.name}
+              </List.Item>
+            );
+          })}
+        </List>
+        <Button
+          color="primary"
+          block
+          onClick={() => {
+            setShowUniversity(false);
+            setAcceptable([]);
+            setValues({});
+          }}
+        >
+          返回到首页
+        </Button>
+      </>
     );
   }
 

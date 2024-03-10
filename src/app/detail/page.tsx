@@ -54,7 +54,7 @@ export default function Detail() {
               {predict > currentMajor?.lowThreeOne &&
               currentMajor?.condition(combination)
                 ? "建议报考"
-                : "不建议报考（高考预估分小于23年三一最低分）"}
+                : "不建议报考（高考预估分小于23年三一最低分或专业不匹配）"}
             </div>
           </Grid.Item>
           <Grid.Item className={`${styles.item} ${styles["item-key"]}`}>
