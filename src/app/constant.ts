@@ -873,7 +873,7 @@ export const UniversityInfoList = [
           return includePhysiclAndChemical(values);
         },
         /* 23三一最低分 */
-        lowThreeOne: /,
+        lowThreeOne: "/",
         /* 选科要求说明 */
         combinationDesc: "物理+化学",
         /* 招生计划 */
@@ -961,7 +961,7 @@ export const UniversityInfoList = [
           return true;
         },
         /* 23三一最低分 */
-        lowThreeOne: /,
+        lowThreeOne: "/",
         /* 选科要求说明 */
         combinationDesc: "不限",
         /* 招生计划 */
@@ -969,7 +969,7 @@ export const UniversityInfoList = [
         /* 条件说明 */
         conditionDesc: "1A9B及以上",
         /* 23初审最低分 */
-        lowwest23: /,
+        lowwest23: "/",
         /* 对应学考等级 */
         lowwestDegreeDesc: "/",
         /* 23高考最低分 */
@@ -983,7 +983,7 @@ export const UniversityInfoList = [
           return true;
         },
         /* 23三一最低分 */
-        lowThreeOne: /,
+        lowThreeOne: "/",
         /* 选科要求说明 */
         combinationDesc: "不限",
         /* 招生计划 */
@@ -991,7 +991,7 @@ export const UniversityInfoList = [
         /* 条件说明 */
         conditionDesc: "1A9B及以上",
         /* 23初审最低分 */
-        lowwest23: /,
+        lowwest23: "/",
         /* 对应学考等级 */
         lowwestDegreeDesc: "/",
         /* 23高考最低分 */
