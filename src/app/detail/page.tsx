@@ -51,7 +51,8 @@ export default function Detail() {
           </Grid.Item>
           <Grid.Item className={`${styles.item} ${styles["item-value"]}`}>
             <div>
-              {predict > currentMajor?.lowThreeOne
+              {predict > currentMajor?.lowThreeOne &&
+              currentMajor?.condition(combination)
                 ? "建议报考"
                 : "不建议报考（高考预估分小于23年三一最低分）"}
             </div>
