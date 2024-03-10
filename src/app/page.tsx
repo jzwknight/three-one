@@ -144,6 +144,8 @@ export default function Home() {
               className="description"
             >
               请准确填写孩子的学考等级个数、选科组合及高考预估分，这将直接影响本次查询结果。若对查询结果有任何疑问可扫码添加阿杭咨询～
+              <br />
+              数据来源于网络整理，查询结果仅作为报考参考
             </div>
           </div>
         </Form.Header>
