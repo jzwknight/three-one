@@ -51,10 +51,8 @@ export const basicColumns = [
 export const UniversityInfoList = [
   {
     name: "浙江工业大学",
-    /* 判断分 */
-    condition: 20,
-    calculate: (a: number, b: number, c: number, d: any) => {
-      return a * 10 + b * 5 + c * 2;
+    specialCalculate: (a: number, b: number, c: number, d: any) => {
+      return a >= 6 && d === 0;
     },
     major: [
       {
@@ -73,8 +71,8 @@ export const UniversityInfoList = [
       },
       {
         name: "健行学院实验班（理工）",
-        condition: (values: any) => {
-          return true;
+        condition: (values: string) => {
+          return includePhysiclAndChemical(values);
         },
         lowThreeOne: "615",
         combinationDesc: "物理+化学",
@@ -185,8 +183,8 @@ export const UniversityInfoList = [
       },
       {
         name: "建筑类",
-        condition: (values: string) => {
-          return includeChemical(values);
+        condition: (values: any) => {
+          return true;
         },
         lowThreeOne: "617",
         combinationDesc: "不限",
@@ -213,8 +211,8 @@ export const UniversityInfoList = [
       },
       {
         name: "法学",
-        condition: (values: string) => {
-          return includeChemical(values);
+        condition: (values: any) => {
+          return true;
         },
         lowThreeOne: "624",
         combinationDesc: "不限",
@@ -227,8 +225,8 @@ export const UniversityInfoList = [
       },
       {
         name: "新闻传播学类",
-        condition: (values: string) => {
-          return includeChemical(values);
+        condition: (values: any) => {
+          return true;
         },
         lowThreeOne: "623",
         combinationDesc: "不限",
@@ -255,8 +253,8 @@ export const UniversityInfoList = [
       },
       {
         name: "金融学",
-        condition: (values: string) => {
-          return includeChemical(values);
+        condition: (values: any) => {
+          return true;
         },
         lowThreeOne: "622",
         combinationDesc: "不限",
@@ -269,8 +267,8 @@ export const UniversityInfoList = [
       },
       {
         name: "国际经济与贸易",
-        condition: (values: string) => {
-          return includeChemical(values);
+        condition: (values: any) => {
+          return true;
         },
         lowThreeOne: "614",
         combinationDesc: "不限",
@@ -297,8 +295,8 @@ export const UniversityInfoList = [
       },
       {
         name: "英语",
-        condition: (values: string) => {
-          return includeChemical(values);
+        condition: (values: any) => {
+          return true;
         },
         lowThreeOne: "611",
         combinationDesc: "不限",
@@ -311,8 +309,8 @@ export const UniversityInfoList = [
       },
       {
         name: "日语",
-        condition: (values: string) => {
-          return includeChemical(values);
+        condition: (values: any) => {
+          return true;
         },
         lowThreeOne: "607",
         combinationDesc: "不限",
@@ -524,9 +522,8 @@ export const UniversityInfoList = [
   {
     name: "杭州师范大学",
     /* 判断分 */
-    condition: 20,
-    calculate: (a: number, b: number, c: number, d: any) => {
-      return a * 10 + b * 5 + c * 2;
+    specialCalculate: (a: number, b: number, c: number, d: any) => {
+      return a >= 2;
     },
     major: [
       {
@@ -608,35 +605,35 @@ export const UniversityInfoList = [
         condition: (values: any) => {
           return true;
         },
-        lowThreeOne: "/",
+        lowThreeOne: "593",
         combinationDesc: "不限",
         admissions: 50,
         conditionDesc: "语文或数学为A等，5A5B及以上",
         lowwest23: "92",
         lowwestDegreeDesc: "8A1B1C",
         lowwestGaoKao23: "643",
-        minus: "/",
+        minus: "50",
       },
       {
         name: "汉语言文学（师范）",
         condition: (values: any) => {
           return true;
         },
-        lowThreeOne: "/",
+        lowThreeOne: "607",
         combinationDesc: "不限",
         admissions: 40,
         conditionDesc: "语文为A等，5A5B及以上",
         lowwest23: "96",
         lowwestDegreeDesc: "8A2B",
         lowwestGaoKao23: "650",
-        minus: "/",
+        minus: "43",
       },
       {
         name: "英语（师范）",
         condition: (values: any) => {
           return true;
         },
-        lowThreeOne: "/",
+        lowThreeOne: "603",
         combinationDesc: "不限",
         admissions: 26,
         conditionDesc: "外语和语文为A等，5A5B及以上",
@@ -650,7 +647,7 @@ export const UniversityInfoList = [
         condition: (values: string) => {
           return includePhysiclAndChemical(values);
         },
-        lowThreeOne: "/",
+        lowThreeOne: "597",
         combinationDesc: "物理+化学",
         admissions: 35,
         conditionDesc: "生物学或物理或化学为A等，5A5B及以上",
@@ -664,28 +661,28 @@ export const UniversityInfoList = [
         condition: (values: string) => {
           return includePhysiclAndChemical(values);
         },
-        lowThreeOne: "/",
+        lowThreeOne: "601",
         combinationDesc: "物理+化学",
         admissions: 30,
         conditionDesc: "物理或化学为A等，5A5B及以上",
         lowwest23: "92",
         lowwestDegreeDesc: "6A4B",
         lowwestGaoKao23: "629",
-        minus: "/",
+        minus: "28",
       },
       {
         name: "思想政治教育（师范）",
         condition: (values: string) => {
           return includePolitical(values);
         },
-        lowThreeOne: "/",
+        lowThreeOne: "606",
         combinationDesc: "思想政治",
         admissions: 30,
         conditionDesc: "思想政治或历史为A等，5A5B及以上",
         lowwest23: "94",
         lowwestDegreeDesc: "7A3B",
         lowwestGaoKao23: "644",
-        minus: "/",
+        minus: "38",
       },
       {
         name: "数学与应用数学（师范）",
@@ -706,21 +703,21 @@ export const UniversityInfoList = [
         condition: (values: any) => {
           return true;
         },
-        lowThreeOne: "/",
+        lowThreeOne: "560",
         combinationDesc: "不限",
         admissions: 60,
         conditionDesc: "10B及以上",
         lowwest23: "82",
         lowwestDegreeDesc: "3A6B1C",
         lowwestGaoKao23: "597",
-        minus: "/",
+        minus: "37",
       },
       {
         name: "特殊教育（师范）",
         condition: (values: any) => {
           return true;
         },
-        lowThreeOne: "/",
+        lowThreeOne: "540",
         combinationDesc: "不限",
         admissions: 30,
         conditionDesc: "9B1C及以上",
@@ -744,7 +741,7 @@ export const UniversityInfoList = [
           return includePhysiclAndChemical(values);
         },
         /* 23三一最低分 */
-        lowThreeOne: 605,
+        lowThreeOne: 602,
         /* 选科要求说明 */
         combinationDesc: "物理+化学",
         /* 招生计划 */
@@ -792,7 +789,7 @@ export const UniversityInfoList = [
         /* 选科要求说明 */
         combinationDesc: "物理+化学",
         /* 招生计划 */
-        admissions: 10,
+        admissions: 110,
         /* 条件说明 */
         conditionDesc: "1A9B及以上",
         /* 23初审最低分 */
@@ -858,7 +855,7 @@ export const UniversityInfoList = [
         /* 选科要求说明 */
         combinationDesc: "物理+化学",
         /* 招生计划 */
-        admissions: 10,
+        admissions: 110,
         /* 条件说明 */
         conditionDesc: "1A9B及以上",
         /* 23初审最低分 */
@@ -876,7 +873,7 @@ export const UniversityInfoList = [
           return includePhysiclAndChemical(values);
         },
         /* 23三一最低分 */
-        lowThreeOne: "/",
+        lowThreeOne: /,
         /* 选科要求说明 */
         combinationDesc: "物理+化学",
         /* 招生计划 */
@@ -902,7 +899,7 @@ export const UniversityInfoList = [
         /* 选科要求说明 */
         combinationDesc: "不限",
         /* 招生计划 */
-        admissions: 10,
+        admissions: 110,
         /* 条件说明 */
         conditionDesc: "1A9B及以上",
         /* 23初审最低分 */
@@ -924,7 +921,7 @@ export const UniversityInfoList = [
         /* 选科要求说明 */
         combinationDesc: "不限",
         /* 招生计划 */
-        admissions: 15,
+        admissions: 115,
         /* 条件说明 */
         conditionDesc: "1A9B及以上",
         /* 23初审最低分 */
@@ -946,7 +943,7 @@ export const UniversityInfoList = [
         /* 选科要求说明 */
         combinationDesc: "不限",
         /* 招生计划 */
-        admissions: 15,
+        admissions: 115,
         /* 条件说明 */
         conditionDesc: "1A9B及以上",
         /* 23初审最低分 */
@@ -954,9 +951,9 @@ export const UniversityInfoList = [
         /* 对应学考等级 */
         lowwestDegreeDesc: "7A3B",
         /* 23高考最低分 */
-        lowwestGaoKao23: "613",
+        lowwestGaoKao23: "/",
         /* 降分幅度 */
-        minus: "31",
+        minus: "/",
       },
       {
         name: "日语",
@@ -964,15 +961,15 @@ export const UniversityInfoList = [
           return true;
         },
         /* 23三一最低分 */
-        lowThreeOne: "/",
+        lowThreeOne: /,
         /* 选科要求说明 */
         combinationDesc: "不限",
         /* 招生计划 */
-        admissions: 10,
+        admissions: 110,
         /* 条件说明 */
         conditionDesc: "1A9B及以上",
         /* 23初审最低分 */
-        lowwest23: "/",
+        lowwest23: /,
         /* 对应学考等级 */
         lowwestDegreeDesc: "/",
         /* 23高考最低分 */
@@ -986,15 +983,15 @@ export const UniversityInfoList = [
           return true;
         },
         /* 23三一最低分 */
-        lowThreeOne: "/",
+        lowThreeOne: /,
         /* 选科要求说明 */
         combinationDesc: "不限",
         /* 招生计划 */
-        admissions: 10,
+        admissions: 110,
         /* 条件说明 */
         conditionDesc: "1A9B及以上",
         /* 23初审最低分 */
-        lowwest23: "/",
+        lowwest23: /,
         /* 对应学考等级 */
         lowwestDegreeDesc: "/",
         /* 23高考最低分 */
@@ -1008,21 +1005,21 @@ export const UniversityInfoList = [
           return true;
         },
         /* 23三一最低分 */
-        lowThreeOne: 602,
+        lowThreeOne: 594,
         /* 选科要求说明 */
-        combinationDesc: "物理+化学",
+        combinationDesc: "不限",
         /* 招生计划 */
-        admissions: 5,
+        admissions: 110,
         /* 条件说明 */
         conditionDesc: "1A9B及以上",
         /* 23初审最低分 */
-        lowwest23: 94,
+        lowwest23: 90,
         /* 对应学考等级 */
-        lowwestDegreeDesc: "7A3B",
+        lowwestDegreeDesc: "5A5B",
         /* 23高考最低分 */
-        lowwestGaoKao23: "637",
+        lowwestGaoKao23: "631",
         /* 降分幅度 */
-        minus: "35",
+        minus: "37",
       },
       {
         name: "学前教育（师范）",
@@ -1030,21 +1027,21 @@ export const UniversityInfoList = [
           return true;
         },
         /* 23三一最低分 */
-        lowThreeOne: 602,
+        lowThreeOne: 584,
         /* 选科要求说明 */
-        combinationDesc: "物理+化学",
+        combinationDesc: "不限",
         /* 招生计划 */
-        admissions: 5,
+        admissions: 35,
         /* 条件说明 */
         conditionDesc: "1A9B及以上",
         /* 23初审最低分 */
-        lowwest23: 94,
+        lowwest23: 90,
         /* 对应学考等级 */
-        lowwestDegreeDesc: "7A3B",
+        lowwestDegreeDesc: "5A5B",
         /* 23高考最低分 */
-        lowwestGaoKao23: "637",
+        lowwestGaoKao23: "614",
         /* 降分幅度 */
-        minus: "35",
+        minus: "30",
       },
       {
         name: "思想政治教育（师范）",
@@ -1052,21 +1049,21 @@ export const UniversityInfoList = [
           return includePolitical(values);
         },
         /* 23三一最低分 */
-        lowThreeOne: 602,
+        lowThreeOne: 631,
         /* 选科要求说明 */
-        combinationDesc: "物理+化学",
+        combinationDesc: "思想政治",
         /* 招生计划 */
-        admissions: 5,
+        admissions: 10,
         /* 条件说明 */
         conditionDesc: "1A9B及以上",
         /* 23初审最低分 */
-        lowwest23: 94,
+        lowwest23: 90,
         /* 对应学考等级 */
-        lowwestDegreeDesc: "7A3B",
+        lowwestDegreeDesc: "5A5B",
         /* 23高考最低分 */
-        lowwestGaoKao23: "637",
+        lowwestGaoKao23: "634",
         /* 降分幅度 */
-        minus: "35",
+        minus: "3",
       },
       {
         name: "汉语言文学（师范）",
@@ -1074,21 +1071,21 @@ export const UniversityInfoList = [
           return true;
         },
         /* 23三一最低分 */
-        lowThreeOne: 602,
+        lowThreeOne: 625,
         /* 选科要求说明 */
-        combinationDesc: "物理+化学",
+        combinationDesc: "不限",
         /* 招生计划 */
-        admissions: 5,
+        admissions: 15,
         /* 条件说明 */
         conditionDesc: "1A9B及以上",
         /* 23初审最低分 */
-        lowwest23: 94,
+        lowwest23: 90,
         /* 对应学考等级 */
-        lowwestDegreeDesc: "7A3B",
+        lowwestDegreeDesc: "5A5B",
         /* 23高考最低分 */
-        lowwestGaoKao23: "637",
+        lowwestGaoKao23: "636",
         /* 降分幅度 */
-        minus: "35",
+        minus: "11",
       },
       {
         name: "英语（师范）要求高考成绩≥115",
@@ -1096,21 +1093,21 @@ export const UniversityInfoList = [
           return true;
         },
         /* 23三一最低分 */
-        lowThreeOne: 602,
+        lowThreeOne: 613,
         /* 选科要求说明 */
-        combinationDesc: "物理+化学",
+        combinationDesc: "不限",
         /* 招生计划 */
-        admissions: 5,
+        admissions: 22,
         /* 条件说明 */
         conditionDesc: "1A9B及以上",
         /* 23初审最低分 */
-        lowwest23: 94,
+        lowwest23: 90,
         /* 对应学考等级 */
-        lowwestDegreeDesc: "7A3B",
+        lowwestDegreeDesc: "5A5B",
         /* 23高考最低分 */
-        lowwestGaoKao23: "637",
+        lowwestGaoKao23: "633",
         /* 降分幅度 */
-        minus: "35",
+        minus: "20",
       },
       {
         name: "数学与应用数学（师范）",
@@ -1118,21 +1115,21 @@ export const UniversityInfoList = [
           return includePhysiclAndChemical(values);
         },
         /* 23三一最低分 */
-        lowThreeOne: 602,
+        lowThreeOne: 596,
         /* 选科要求说明 */
         combinationDesc: "物理+化学",
         /* 招生计划 */
-        admissions: 5,
+        admissions: 15,
         /* 条件说明 */
         conditionDesc: "1A9B及以上",
         /* 23初审最低分 */
-        lowwest23: 94,
+        lowwest23: 90,
         /* 对应学考等级 */
-        lowwestDegreeDesc: "7A3B",
+        lowwestDegreeDesc: "5A5B",
         /* 23高考最低分 */
-        lowwestGaoKao23: "637",
+        lowwestGaoKao23: "/",
         /* 降分幅度 */
-        minus: "35",
+        minus: "/",
       },
       {
         name: "物理学（师范）",
@@ -1140,21 +1137,21 @@ export const UniversityInfoList = [
           return includePhysiclAndChemical(values);
         },
         /* 23三一最低分 */
-        lowThreeOne: 602,
+        lowThreeOne: 593,
         /* 选科要求说明 */
         combinationDesc: "物理+化学",
         /* 招生计划 */
-        admissions: 5,
+        admissions: 30,
         /* 条件说明 */
         conditionDesc: "1A9B及以上",
         /* 23初审最低分 */
-        lowwest23: 94,
+        lowwest23: 90,
         /* 对应学考等级 */
-        lowwestDegreeDesc: "7A3B",
+        lowwestDegreeDesc: "5A5B",
         /* 23高考最低分 */
-        lowwestGaoKao23: "637",
+        lowwestGaoKao23: "620",
         /* 降分幅度 */
-        minus: "35",
+        minus: "27",
       },
       {
         name: "地理科学（师范）",
@@ -1162,27 +1159,43 @@ export const UniversityInfoList = [
           return includeGeography(values);
         },
         /* 23三一最低分 */
-        lowThreeOne: 602,
+        lowThreeOne: 611,
         /* 选科要求说明 */
-        combinationDesc: "物理+化学",
+        combinationDesc: "地理",
         /* 招生计划 */
-        admissions: 5,
+        admissions: 25,
         /* 条件说明 */
         conditionDesc: "1A9B及以上",
         /* 23初审最低分 */
-        lowwest23: 94,
+        lowwest23: 90,
         /* 对应学考等级 */
-        lowwestDegreeDesc: "7A3B",
+        lowwestDegreeDesc: "5A5B",
         /* 23高考最低分 */
-        lowwestGaoKao23: "637",
+        lowwestGaoKao23: "632",
         /* 降分幅度 */
-        minus: "35",
+        minus: "21",
       },
       {
         name: "人文地理与城乡规划（中外合作办学）（中法合作）",
         condition: (values: string) => {
           return includeGeography(values);
         },
+        /* 23三一最低分 */
+        lowThreeOne: 563,
+        /* 选科要求说明 */
+        combinationDesc: "地理",
+        /* 招生计划 */
+        admissions: 15,
+        /* 条件说明 */
+        conditionDesc: "1A9B及以上",
+        /* 23初审最低分 */
+        lowwest23: 82,
+        /* 对应学考等级 */
+        lowwestDegreeDesc: "1A9B",
+        /* 23高考最低分 */
+        lowwestGaoKao23: "606",
+        /* 降分幅度 */
+        minus: "43",
       },
       {
         name: "旅游管理（中外合作办学）（中法合作）",
@@ -1190,21 +1203,21 @@ export const UniversityInfoList = [
           return true;
         },
         /* 23三一最低分 */
-        lowThreeOne: 602,
+        lowThreeOne: 551,
         /* 选科要求说明 */
-        combinationDesc: "物理+化学",
+        combinationDesc: "不限",
         /* 招生计划 */
-        admissions: 5,
+        admissions: 15,
         /* 条件说明 */
         conditionDesc: "1A9B及以上",
         /* 23初审最低分 */
-        lowwest23: 94,
+        lowwest23: 82,
         /* 对应学考等级 */
-        lowwestDegreeDesc: "7A3B",
+        lowwestDegreeDesc: "1A9B",
         /* 23高考最低分 */
-        lowwestGaoKao23: "637",
+        lowwestGaoKao23: "595",
         /* 降分幅度 */
-        minus: "35",
+        minus: "44",
       },
     ],
   },
@@ -1220,22 +1233,14 @@ export const UniversityInfoList = [
         condition: (values: any) => {
           return true;
         },
-        /* 23三一最低分 */
         lowThreeOne: "/",
-        /* 选科要求说明 */
         combinationDesc: "不限",
-        /* 招生计划 */
         admissions: 62,
-        /* 条件说明 */
         conditionDesc: "10D及以上",
-        /* 23初审最低分 */
-        lowwest23: "/",
-        /* 对应学考等级 */
-        lowwestDegreeDesc: "/",
-        /* 23高考最低分 */
-        lowwestGaoKao23: "60937",
-        /* 降分幅度 */
-        minus: "35",
+        lowwest23: "79分",
+        lowwestDegreeDesc: "3A7B",
+        lowwestGaoKao23: "609",
+        minus: "/",
       },
       {
         name: "财务管理(中外合作办学)",
@@ -1246,8 +1251,8 @@ export const UniversityInfoList = [
         combinationDesc: "不限",
         admissions: 12,
         conditionDesc: "10D及以上",
-        lowwest23: "/",
-        lowwestDegreeDesc: "/",
+        lowwest23: "79分",
+        lowwestDegreeDesc: "3A7B",
         lowwestGaoKao23: "611",
         minus: "/",
       },
@@ -1260,8 +1265,8 @@ export const UniversityInfoList = [
         combinationDesc: "不限",
         admissions: 1,
         conditionDesc: "10D及以上",
-        lowwest23: "/",
-        lowwestDegreeDesc: "/",
+        lowwest23: "79分",
+        lowwestDegreeDesc: "3A7B",
         lowwestGaoKao23: "621",
         minus: "/",
       },
@@ -1274,8 +1279,8 @@ export const UniversityInfoList = [
         combinationDesc: "不限",
         admissions: 3,
         conditionDesc: "10D及以上",
-        lowwest23: "/",
-        lowwestDegreeDesc: "/",
+        lowwest23: "79分",
+        lowwestDegreeDesc: "3A7B",
         lowwestGaoKao23: "619",
         minus: "/",
       },
@@ -1288,8 +1293,8 @@ export const UniversityInfoList = [
         combinationDesc: "政治",
         admissions: 17,
         conditionDesc: "10D及以上",
-        lowwest23: "/",
-        lowwestDegreeDesc: "/",
+        lowwest23: "79分",
+        lowwestDegreeDesc: "3A7B",
         lowwestGaoKao23: "614",
         minus: "/",
       },
@@ -1302,8 +1307,8 @@ export const UniversityInfoList = [
         combinationDesc: "不限",
         admissions: 12,
         conditionDesc: "10D及以上",
-        lowwest23: "/",
-        lowwestDegreeDesc: "/",
+        lowwest23: "79分",
+        lowwestDegreeDesc: "3A7B",
         lowwestGaoKao23: "/",
         minus: "/",
       },
@@ -1316,8 +1321,8 @@ export const UniversityInfoList = [
         combinationDesc: "不限",
         admissions: 9,
         conditionDesc: "10D及以上",
-        lowwest23: "/",
-        lowwestDegreeDesc: "/",
+        lowwest23: "79分",
+        lowwestDegreeDesc: "3A7B",
         lowwestGaoKao23: "609",
         minus: "/",
       },
@@ -1344,8 +1349,8 @@ export const UniversityInfoList = [
         combinationDesc: "物理+化学",
         admissions: 3,
         conditionDesc: "10D及以上",
-        lowwest23: "/",
-        lowwestDegreeDesc: "/",
+        lowwest23: "79分",
+        lowwestDegreeDesc: "3A7B",
         lowwestGaoKao23: "618",
         minus: "/",
       },
@@ -1358,8 +1363,8 @@ export const UniversityInfoList = [
         combinationDesc: "物理+化学",
         admissions: 3,
         conditionDesc: "10D及以上",
-        lowwest23: "/",
-        lowwestDegreeDesc: "/",
+        lowwest23: "79分",
+        lowwestDegreeDesc: "3A7B",
         lowwestGaoKao23: "618",
         minus: "/",
       },
@@ -1372,8 +1377,8 @@ export const UniversityInfoList = [
         combinationDesc: "物理+化学",
         admissions: 45,
         conditionDesc: "10D及以上",
-        lowwest23: "/",
-        lowwestDegreeDesc: "/",
+        lowwest23: "79分",
+        lowwestDegreeDesc: "3A7B",
         lowwestGaoKao23: "615",
         minus: "/",
       },
@@ -1386,8 +1391,8 @@ export const UniversityInfoList = [
         combinationDesc: "物理+化学",
         admissions: 17,
         conditionDesc: "10D及以上",
-        lowwest23: "/",
-        lowwestDegreeDesc: "/",
+        lowwest23: "79分",
+        lowwestDegreeDesc: "3A7B",
         lowwestGaoKao23: "613",
         minus: "/",
       },
@@ -1400,8 +1405,8 @@ export const UniversityInfoList = [
         combinationDesc: "物理+化学",
         admissions: 8,
         conditionDesc: "10D及以上",
-        lowwest23: "/",
-        lowwestDegreeDesc: "/",
+        lowwest23: "79分",
+        lowwestDegreeDesc: "3A7B",
         lowwestGaoKao23: "616",
         minus: "/",
       },
@@ -1414,8 +1419,8 @@ export const UniversityInfoList = [
         combinationDesc: "物理+化学",
         admissions: 4,
         conditionDesc: "10D及以上",
-        lowwest23: "/",
-        lowwestDegreeDesc: "/",
+        lowwest23: "79分",
+        lowwestDegreeDesc: "3A7B",
         lowwestGaoKao23: "630",
         minus: "/",
       },
@@ -1428,8 +1433,8 @@ export const UniversityInfoList = [
         combinationDesc: "不限",
         admissions: 2,
         conditionDesc: "10D及以上",
-        lowwest23: "/",
-        lowwestDegreeDesc: "/",
+        lowwest23: "79分",
+        lowwestDegreeDesc: "3A7B",
         lowwestGaoKao23: "609",
         minus: "/",
       },
@@ -1447,105 +1452,105 @@ export const UniversityInfoList = [
         condition: (values: string) => {
           return includePhysiclAndChemical(values);
         },
-        lowThreeOne: "/",
+        lowThreeOne: "636",
         combinationDesc: "物理+化学",
         admissions: 5,
         conditionDesc: "2A8B及以上",
         lowwest23: "130",
         lowwestDegreeDesc: "6A4B",
         lowwestGaoKao23: "651",
-        minus: "/",
+        minus: "15",
       },
       {
         name: "经管类实验班",
         condition: (values: any) => {
           return true;
         },
-        lowThreeOne: "/",
+        lowThreeOne: "636",
         combinationDesc: "不限",
         admissions: 5,
         conditionDesc: "2A8B及以上",
         lowwest23: "130",
         lowwestDegreeDesc: "6A4B",
         lowwestGaoKao23: "644",
-        minus: "/",
+        minus: "8",
       },
       {
         name: "智能科学与技术",
         condition: (values: string) => {
           return includePhysiclAndChemical(values);
         },
-        lowThreeOne: "/",
+        lowThreeOne: "615",
         combinationDesc: "物理+化学",
         admissions: 10,
         conditionDesc: "2A8B及以上",
         lowwest23: "130",
         lowwestDegreeDesc: "6A4B",
         lowwestGaoKao23: "637",
-        minus: "/",
+        minus: "22",
       },
       {
         name: "计算机类",
         condition: (values: string) => {
           return includePhysiclAndChemical(values);
         },
-        lowThreeOne: "/",
+        lowThreeOne: "619",
         combinationDesc: "物理+化学",
         admissions: 40,
         conditionDesc: "2A8B及以上",
         lowwest23: "130",
         lowwestDegreeDesc: "6A4B",
         lowwestGaoKao23: "641",
-        minus: "/",
+        minus: "22",
       },
       {
         name: "电子信息类（电子信息学院）",
         condition: (values: string) => {
           return includePhysiclAndChemical(values);
         },
-        lowThreeOne: "/",
+        lowThreeOne: "610",
         combinationDesc: "物理+化学",
         admissions: 30,
         conditionDesc: "2A8B及以上",
         lowwest23: "130",
         lowwestDegreeDesc: "6A4B",
         lowwestGaoKao23: "631",
-        minus: "/",
+        minus: "21",
       },
       {
         name: "集成电路设计与集成系统",
         condition: (values: string) => {
           return includePhysiclAndChemical(values);
         },
-        lowThreeOne: "/",
+        lowThreeOne: "619",
         combinationDesc: "物理+化学",
         admissions: 10,
         conditionDesc: "2A8B及以上",
         lowwest23: "130",
         lowwestDegreeDesc: "6A4B",
         lowwestGaoKao23: "636",
-        minus: "/",
+        minus: "17",
       },
       {
         name: "数字媒体技术",
         condition: (values: string) => {
           return includePhysiclAndChemical(values);
         },
-        lowThreeOne: "/",
+        lowThreeOne: "615",
         combinationDesc: "物理+化学",
         admissions: 10,
         conditionDesc: "2A8B及以上",
         lowwest23: "130",
         lowwestDegreeDesc: "6A4B",
         lowwestGaoKao23: "631",
-        minus: "/",
+        minus: "16",
       },
       {
         name: "信息安全",
         condition: (values: string) => {
           return includePhysiclAndChemical(values);
         },
-        lowThreeOne: "/",
+        lowThreeOne: "614",
         combinationDesc: "物理+化学",
         admissions: 5,
         conditionDesc: "2A8B及以上",
@@ -1559,63 +1564,63 @@ export const UniversityInfoList = [
         condition: (values: string) => {
           return includePhysiclAndChemical(values);
         },
-        lowThreeOne: "/",
+        lowThreeOne: "627",
         combinationDesc: "物理+化学",
         admissions: 5,
         conditionDesc: "2A8B及以上",
         lowwest23: "130",
         lowwestDegreeDesc: "6A4B",
         lowwestGaoKao23: "635",
-        minus: "/",
+        minus: "8",
       },
       {
         name: "电子信息类（通信学院）",
         condition: (values: string) => {
           return includePhysiclAndChemical(values);
         },
-        lowThreeOne: "/",
+        lowThreeOne: "607",
         combinationDesc: "物理+化学",
         admissions: 35,
         conditionDesc: "2A8B及以上",
         lowwest23: "130",
         lowwestDegreeDesc: "6A4B",
         lowwestGaoKao23: "627",
-        minus: "/",
+        minus: "20",
       },
       {
         name: "电气工程及其自动化",
         condition: (values: string) => {
           return includePhysiclAndChemical(values);
         },
-        lowThreeOne: "/",
+        lowThreeOne: "607",
         combinationDesc: "物理+化学",
         admissions: 20,
         conditionDesc: "2A8B及以上",
         lowwest23: "130",
         lowwestDegreeDesc: "6A4B",
         lowwestGaoKao23: "629",
-        minus: "/",
+        minus: "22",
       },
       {
         name: "自动化",
         condition: (values: string) => {
           return includePhysiclAndChemical(values);
         },
-        lowThreeOne: "/",
+        lowThreeOne: "612",
         combinationDesc: "物理+化学",
         admissions: 35,
         conditionDesc: "2A8B及以上",
         lowwest23: "130",
         lowwestDegreeDesc: "6A4B",
         lowwestGaoKao23: "626",
-        minus: "/",
+        minus: "14",
       },
       {
         name: "机械设计制造及其自动化",
         condition: (values: string) => {
           return includePhysiclAndChemical(values);
         },
-        lowThreeOne: "/",
+        lowThreeOne: "601",
         combinationDesc: "物理+化学",
         admissions: 20,
         conditionDesc: "2A8B及以上",
@@ -1629,7 +1634,7 @@ export const UniversityInfoList = [
         condition: (values: string) => {
           return includePhysiclAndChemical(values);
         },
-        lowThreeOne: "/",
+        lowThreeOne: "593",
         combinationDesc: "物理+化学",
         admissions: 5,
         conditionDesc: "2A8B及以上",
@@ -1643,7 +1648,7 @@ export const UniversityInfoList = [
         condition: (values: string) => {
           return includePhysiclAndChemical(values);
         },
-        lowThreeOne: "/",
+        lowThreeOne: "561",
         combinationDesc: "物理+化学",
         admissions: 15,
         conditionDesc: "2A8B及以上",
@@ -1657,21 +1662,21 @@ export const UniversityInfoList = [
         condition: (values: string) => {
           return includePhysicl(values);
         },
-        lowThreeOne: "/",
+        lowThreeOne: "570",
         combinationDesc: "物理",
         admissions: 30,
         conditionDesc: "2A8B及以上",
         lowwest23: "130",
         lowwestDegreeDesc: "6A4B",
         lowwestGaoKao23: "621",
-        minus: "/",
+        minus: "51",
       },
       {
         name: "数学类",
         condition: (values: string) => {
           return includePhysiclAndChemical(values);
         },
-        lowThreeOne: "/",
+        lowThreeOne: "590",
         combinationDesc: "物理+化学",
         admissions: 35,
         conditionDesc: "2A8B及以上",
@@ -1685,7 +1690,7 @@ export const UniversityInfoList = [
         condition: (values: string) => {
           return includePhysiclAndChemical(values);
         },
-        lowThreeOne: "/",
+        lowThreeOne: "600",
         combinationDesc: "物理+化学",
         admissions: 20,
         conditionDesc: "2A8B及以上",
@@ -1699,7 +1704,7 @@ export const UniversityInfoList = [
         condition: (values: string) => {
           return includePhysiclAndChemical(values);
         },
-        lowThreeOne: "/",
+        lowThreeOne: "608",
         combinationDesc: "物理+化学",
         admissions: 5,
         conditionDesc: "2A8B及以上",
@@ -1713,7 +1718,7 @@ export const UniversityInfoList = [
         condition: (values: string) => {
           return includePhysicl(values);
         },
-        lowThreeOne: "/",
+        lowThreeOne: "592",
         combinationDesc: "物理",
         admissions: 10,
         conditionDesc: "2A8B及以上",
@@ -1727,21 +1732,21 @@ export const UniversityInfoList = [
         condition: (values: string) => {
           return includePhysiclAndChemical(values);
         },
-        lowThreeOne: "/",
+        lowThreeOne: "602",
         combinationDesc: "物理+化学",
         admissions: 10,
         conditionDesc: "2A8B及以上",
         lowwest23: "130",
         lowwestDegreeDesc: "6A4B",
         lowwestGaoKao23: "622",
-        minus: "/",
+        minus: "20",
       },
       {
         name: "环境工程",
         condition: (values: string) => {
           return includePhysiclAndChemical(values);
         },
-        lowThreeOne: "/",
+        lowThreeOne: "555",
         combinationDesc: "物理+化学",
         admissions: 25,
         conditionDesc: "2A8B及以上",
@@ -1755,63 +1760,63 @@ export const UniversityInfoList = [
         condition: (values: any) => {
           return true;
         },
-        lowThreeOne: "/",
+        lowThreeOne: "612",
         combinationDesc: "不限",
         admissions: 10,
         conditionDesc: "2A8B及以上",
         lowwest23: "130",
         lowwestDegreeDesc: "6A4B",
         lowwestGaoKao23: "625",
-        minus: "/",
+        minus: "13",
       },
       {
         name: "审计学",
         condition: (values: any) => {
           return true;
         },
-        lowThreeOne: "/",
+        lowThreeOne: "610",
         combinationDesc: "不限",
         admissions: 5,
         conditionDesc: "2A8B及以上",
         lowwest23: "130",
         lowwestDegreeDesc: "6A4B",
         lowwestGaoKao23: "624",
-        minus: "/",
+        minus: "14",
       },
       {
         name: "财务管理",
         condition: (values: any) => {
           return true;
         },
-        lowThreeOne: "/",
+        lowThreeOne: "594",
         combinationDesc: "不限",
         admissions: 5,
         conditionDesc: "2A8B及以上",
         lowwest23: "130",
         lowwestDegreeDesc: "6A4B",
         lowwestGaoKao23: "621",
-        minus: "/",
+        minus: "27",
       },
       {
         name: "工商管理类",
         condition: (values: any) => {
           return true;
         },
-        lowThreeOne: "/",
+        lowThreeOne: "588",
         combinationDesc: "不限",
         admissions: 5,
         conditionDesc: "2A8B及以上",
         lowwest23: "130",
         lowwestDegreeDesc: "6A4B",
         lowwestGaoKao23: "611",
-        minus: "/",
+        minus: "23",
       },
       {
         name: "经济学类",
         condition: (values: any) => {
           return true;
         },
-        lowThreeOne: "/",
+        lowThreeOne: "575",
         combinationDesc: "不限",
         admissions: 10,
         conditionDesc: "2A8B及以上",
@@ -1825,21 +1830,21 @@ export const UniversityInfoList = [
         condition: (values: any) => {
           return true;
         },
-        lowThreeOne: "/",
+        lowThreeOne: "577",
         combinationDesc: "不限",
         admissions: 5,
         conditionDesc: "2A8B及以上",
         lowwest23: "130",
         lowwestDegreeDesc: "6A4B",
         lowwestGaoKao23: "613",
-        minus: "/",
+        minus: "36",
       },
       {
         name: "电子商务",
         condition: (values: any) => {
           return true;
         },
-        lowThreeOne: "/",
+        lowThreeOne: "595",
         combinationDesc: "不限",
         admissions: 5,
         conditionDesc: "2A8B及以上",
@@ -1853,35 +1858,35 @@ export const UniversityInfoList = [
         condition: (values: any) => {
           return true;
         },
-        lowThreeOne: "/",
+        lowThreeOne: "599",
         combinationDesc: "不限",
         admissions: 5,
         conditionDesc: "2A8B及以上",
         lowwest23: "130",
         lowwestDegreeDesc: "6A4B",
         lowwestGaoKao23: "622",
-        minus: "/",
+        minus: "23",
       },
       {
         name: "英语",
         condition: (values: any) => {
           return true;
         },
-        lowThreeOne: "/",
+        lowThreeOne: "595",
         combinationDesc: "不限",
         admissions: 5,
         conditionDesc: "2A8B及以上",
         lowwest23: "130",
         lowwestDegreeDesc: "6A4B",
         lowwestGaoKao23: "607",
-        minus: "/",
+        minus: "12",
       },
       {
         name: "传播学",
         condition: (values: any) => {
           return true;
         },
-        lowThreeOne: "/",
+        lowThreeOne: "552",
         combinationDesc: "不限",
         admissions: 10,
         conditionDesc: "2A8B及以上",
@@ -1896,7 +1901,7 @@ export const UniversityInfoList = [
     name: "浙江工商大学",
     condition: 60,
     calculate: (a: number, b: number, c: number, d: any) => {
-      return a * 10 + b * 5 + c * 0;
+      return a * 10 + b * 5;
     },
     major: [
       {
@@ -1922,8 +1927,8 @@ export const UniversityInfoList = [
         combinationDesc: "物理",
         admissions: 5,
         conditionDesc: "2A8B及以上",
-        lowwest23: "85",
-        lowwestDegreeDesc: "7A3B",
+        lowwest23: "/",
+        lowwestDegreeDesc: "/",
         lowwestGaoKao23: "/",
         minus: "/",
       },
@@ -1964,8 +1969,8 @@ export const UniversityInfoList = [
         combinationDesc: "不限",
         admissions: 5,
         conditionDesc: "2A8B及以上",
-        lowwest23: "85",
-        lowwestDegreeDesc: "7A3B",
+        lowwest23: "/",
+        lowwestDegreeDesc: "/",
         lowwestGaoKao23: "613",
         minus: "/",
       },
@@ -1978,8 +1983,8 @@ export const UniversityInfoList = [
         combinationDesc: "不限",
         admissions: 15,
         conditionDesc: "2A8B及以上",
-        lowwest23: "85",
-        lowwestDegreeDesc: "7A3B",
+        lowwest23: "/",
+        lowwestDegreeDesc: "/",
         lowwestGaoKao23: "596",
         minus: "/",
       },
@@ -1992,8 +1997,8 @@ export const UniversityInfoList = [
         combinationDesc: "物理",
         admissions: 5,
         conditionDesc: "2A8B及以上",
-        lowwest23: "85",
-        lowwestDegreeDesc: "7A3B",
+        lowwest23: "/",
+        lowwestDegreeDesc: "/",
         lowwestGaoKao23: "/",
         minus: "/",
       },
@@ -2020,8 +2025,8 @@ export const UniversityInfoList = [
         combinationDesc: "不限",
         admissions: 30,
         conditionDesc: "2A8B及以上",
-        lowwest23: "/",
-        lowwestDegreeDesc: "/",
+        lowwest23: "65",
+        lowwestDegreeDesc: "4A5B或3A7B",
         lowwestGaoKao23: "594",
         minus: "9",
       },
@@ -2034,8 +2039,8 @@ export const UniversityInfoList = [
         combinationDesc: "不限",
         admissions: 25,
         conditionDesc: "2A8B及以上",
-        lowwest23: "/",
-        lowwestDegreeDesc: "/",
+        lowwest23: "65",
+        lowwestDegreeDesc: "4A5B或3A7B",
         lowwestGaoKao23: "594",
         minus: "28",
       },
@@ -2048,8 +2053,8 @@ export const UniversityInfoList = [
         combinationDesc: "不限",
         admissions: 4,
         conditionDesc: "2A8B及以上",
-        lowwest23: "/",
-        lowwestDegreeDesc: "/",
+        lowwest23: "70",
+        lowwestDegreeDesc: "4A6B",
         lowwestGaoKao23: "605",
         minus: "23",
       },
@@ -2062,8 +2067,8 @@ export const UniversityInfoList = [
         combinationDesc: "不限",
         admissions: 4,
         conditionDesc: "2A8B及以上",
-        lowwest23: "/",
-        lowwestDegreeDesc: "/",
+        lowwest23: "65",
+        lowwestDegreeDesc: "4A5B或3A7B",
         lowwestGaoKao23: "608",
         minus: "8",
       },
@@ -2076,8 +2081,8 @@ export const UniversityInfoList = [
         combinationDesc: "不限",
         admissions: 25,
         conditionDesc: "2A8B及以上",
-        lowwest23: "/",
-        lowwestDegreeDesc: "/",
+        lowwest23: "65",
+        lowwestDegreeDesc: "4A5B或3A7B",
         lowwestGaoKao23: "596",
         minus: "-2",
       },
@@ -2104,8 +2109,8 @@ export const UniversityInfoList = [
         combinationDesc: "不限",
         admissions: 4,
         conditionDesc: "2A8B及以上",
-        lowwest23: "/",
-        lowwestDegreeDesc: "/",
+        lowwest23: "65",
+        lowwestDegreeDesc: "4A5B或3A7B",
         lowwestGaoKao23: "610",
         minus: "18",
       },
@@ -2118,8 +2123,8 @@ export const UniversityInfoList = [
         combinationDesc: "不限",
         admissions: 4,
         conditionDesc: "2A8B及以上",
-        lowwest23: "/",
-        lowwestDegreeDesc: "/",
+        lowwest23: "65",
+        lowwestDegreeDesc: "4A5B或3A7B",
         lowwestGaoKao23: "630",
         minus: "14",
       },
@@ -2132,8 +2137,8 @@ export const UniversityInfoList = [
         combinationDesc: "不限",
         admissions: 10,
         conditionDesc: "2A8B及以上",
-        lowwest23: "/",
-        lowwestDegreeDesc: "/",
+        lowwest23: "65",
+        lowwestDegreeDesc: "4A5B或3A7B",
         lowwestGaoKao23: "609",
         minus: "15",
       },
@@ -2146,8 +2151,8 @@ export const UniversityInfoList = [
         combinationDesc: "不限",
         admissions: 10,
         conditionDesc: "2A8B及以上",
-        lowwest23: "/",
-        lowwestDegreeDesc: "/",
+        lowwest23: "65",
+        lowwestDegreeDesc: "4A5B或3A7B",
         lowwestGaoKao23: "594",
         minus: "7",
       },
@@ -2160,8 +2165,8 @@ export const UniversityInfoList = [
         combinationDesc: "不限",
         admissions: 25,
         conditionDesc: "2A8B及以上",
-        lowwest23: "/",
-        lowwestDegreeDesc: "/",
+        lowwest23: "65",
+        lowwestDegreeDesc: "4A5B或3A7B",
         lowwestGaoKao23: "585",
         minus: "-1",
       },
@@ -2174,8 +2179,8 @@ export const UniversityInfoList = [
         combinationDesc: "不限",
         admissions: 4,
         conditionDesc: "2A8B及以上",
-        lowwest23: "/",
-        lowwestDegreeDesc: "/",
+        lowwest23: "65",
+        lowwestDegreeDesc: "4A5B或3A7B",
         lowwestGaoKao23: "625",
         minus: "16",
       },
@@ -2188,8 +2193,8 @@ export const UniversityInfoList = [
         combinationDesc: "物理+化学",
         admissions: 10,
         conditionDesc: "2A8B及以上",
-        lowwest23: "/",
-        lowwestDegreeDesc: "/",
+        lowwest23: "70",
+        lowwestDegreeDesc: "4A6B",
         lowwestGaoKao23: "611",
         minus: "28",
       },
@@ -2202,8 +2207,8 @@ export const UniversityInfoList = [
         combinationDesc: "物理+化学",
         admissions: 10,
         conditionDesc: "2A8B及以上",
-        lowwest23: "/",
-        lowwestDegreeDesc: "/",
+        lowwest23: "70",
+        lowwestDegreeDesc: "4A6B",
         lowwestGaoKao23: "615",
         minus: "42",
       },
@@ -2216,8 +2221,8 @@ export const UniversityInfoList = [
         combinationDesc: "物理+化学",
         admissions: 20,
         conditionDesc: "2A8B及以上",
-        lowwest23: "/",
-        lowwestDegreeDesc: "/",
+        lowwest23: "70",
+        lowwestDegreeDesc: "4A6B",
         lowwestGaoKao23: "597",
         minus: "37",
       },
@@ -2230,8 +2235,8 @@ export const UniversityInfoList = [
         combinationDesc: "物理+化学",
         admissions: 20,
         conditionDesc: "2A8B及以上",
-        lowwest23: "/",
-        lowwestDegreeDesc: "/",
+        lowwest23: "70",
+        lowwestDegreeDesc: "4A6B",
         lowwestGaoKao23: "600",
         minus: "41",
       },
@@ -2244,8 +2249,8 @@ export const UniversityInfoList = [
         combinationDesc: "不限",
         admissions: 25,
         conditionDesc: "2A8B及以上",
-        lowwest23: "/",
-        lowwestDegreeDesc: "/",
+        lowwest23: "70",
+        lowwestDegreeDesc: "4A6B",
         lowwestGaoKao23: "597",
         minus: "47",
       },
@@ -2258,8 +2263,8 @@ export const UniversityInfoList = [
         combinationDesc: "物理+化学",
         admissions: 5,
         conditionDesc: "2A8B及以上",
-        lowwest23: "/",
-        lowwestDegreeDesc: "/",
+        lowwest23: "70",
+        lowwestDegreeDesc: "4A6B",
         lowwestGaoKao23: "612",
         minus: "30",
       },
@@ -2272,8 +2277,8 @@ export const UniversityInfoList = [
         combinationDesc: "物理+化学",
         admissions: 5,
         conditionDesc: "2A8B及以上",
-        lowwest23: "/",
-        lowwestDegreeDesc: "/",
+        lowwest23: "70",
+        lowwestDegreeDesc: "4A6B",
         lowwestGaoKao23: "607",
         minus: "34",
       },
@@ -2286,8 +2291,8 @@ export const UniversityInfoList = [
         combinationDesc: "物理+化学",
         admissions: 5,
         conditionDesc: "2A8B及以上",
-        lowwest23: "/",
-        lowwestDegreeDesc: "/",
+        lowwest23: "70",
+        lowwestDegreeDesc: "4A6B",
         lowwestGaoKao23: "598",
         minus: "22",
       },
@@ -2300,8 +2305,8 @@ export const UniversityInfoList = [
         combinationDesc: "物理",
         admissions: 5,
         conditionDesc: "2A8B及以上",
-        lowwest23: "/",
-        lowwestDegreeDesc: "/",
+        lowwest23: "70",
+        lowwestDegreeDesc: "4A6B",
         lowwestGaoKao23: "608",
         minus: "23",
       },
@@ -3831,7 +3836,7 @@ export const UniversityInfoList = [
     name: "中国计量大学",
     condition: 110,
     calculate: (a: number, b: number, c: number, d: any) => {
-      return a * 20 + b * 10 + c * 0;
+      return a * 20 + b * 10;
     },
     major: [
       {
@@ -5083,10 +5088,6 @@ export const UniversityInfoList = [
   },
   {
     name: "浙江科技大学",
-    condition: 50,
-    calculate: (a: number, b: number, c: number, d: any) => {
-      return a * 15 + b * 10 + c * 5;
-    },
     // 不一样的计算方式
     specialCalculate: (a: number, b: number, c: number, d: any) => {
       return a + b >= 6;
@@ -5099,7 +5100,7 @@ export const UniversityInfoList = [
         },
         lowThreeOne: "541",
         combinationDesc: "物理+化学",
-        admissions: 12,
+        admissions: 30,
         conditionDesc: "A+B≥6",
         lowwest23: "105",
         lowwestDegreeDesc: "1A9B",
@@ -5113,7 +5114,7 @@ export const UniversityInfoList = [
         },
         lowThreeOne: "/",
         combinationDesc: "物理+化学",
-        admissions: 12,
+        admissions: 10,
         conditionDesc: "A+B≥6",
         lowwest23: "/",
         lowwestDegreeDesc: "/",
@@ -5127,7 +5128,7 @@ export const UniversityInfoList = [
         },
         lowThreeOne: "/",
         combinationDesc: "物理+化学",
-        admissions: 12,
+        admissions: 20,
         conditionDesc: "A+B≥6",
         lowwest23: "/",
         lowwestDegreeDesc: "/",
@@ -5141,7 +5142,7 @@ export const UniversityInfoList = [
         },
         lowThreeOne: "557",
         combinationDesc: "物理+化学",
-        admissions: 12,
+        admissions: 5,
         conditionDesc: "A+B≥6",
         lowwest23: "95",
         lowwestDegreeDesc: "9B1C",
@@ -5155,7 +5156,7 @@ export const UniversityInfoList = [
         },
         lowThreeOne: "535",
         combinationDesc: "物理+化学",
-        admissions: 12,
+        admissions: 10,
         conditionDesc: "A+B≥6",
         lowwest23: "95",
         lowwestDegreeDesc: "9B1C",
@@ -5169,7 +5170,7 @@ export const UniversityInfoList = [
         },
         lowThreeOne: "549",
         combinationDesc: "物理+化学",
-        admissions: 12,
+        admissions: 30,
         conditionDesc: "A+B≥6",
         lowwest23: "95",
         lowwestDegreeDesc: "9B1C",
@@ -5183,7 +5184,7 @@ export const UniversityInfoList = [
         },
         lowThreeOne: "521",
         combinationDesc: "物理+化学",
-        admissions: 12,
+        admissions: 55,
         conditionDesc: "A+B≥6",
         lowwest23: "95",
         lowwestDegreeDesc: "9B1C",
@@ -5197,7 +5198,7 @@ export const UniversityInfoList = [
         },
         lowThreeOne: "524",
         combinationDesc: "物理+化学",
-        admissions: 12,
+        admissions: 30,
         conditionDesc: "A+B≥6",
         lowwest23: "95",
         lowwestDegreeDesc: "9B1C",
@@ -5211,7 +5212,7 @@ export const UniversityInfoList = [
         },
         lowThreeOne: "504",
         combinationDesc: "不限",
-        admissions: 12,
+        admissions: 30,
         conditionDesc: "A+B≥6",
         lowwest23: "100",
         lowwestDegreeDesc: "10B",
@@ -5225,7 +5226,7 @@ export const UniversityInfoList = [
         },
         lowThreeOne: "/",
         combinationDesc: "不限",
-        admissions: 12,
+        admissions: 20,
         conditionDesc: "A+B≥6",
         lowwest23: "/",
         lowwestDegreeDesc: "/",
@@ -5236,9 +5237,8 @@ export const UniversityInfoList = [
   },
   {
     name: "丽水学院",
-    condition: 35,
-    calculate: (a: number, b: number, c: number, d: number) => {
-      return a * 10 + b * 7 + c * 4 + d * 1;
+    specialCalculate: (a: number, b: number, c: number, d: any) => {
+      return a + b >= 5;
     },
     major: [
       {
@@ -5287,9 +5287,8 @@ export const UniversityInfoList = [
   },
   {
     name: "湖州师范学院",
-    condition: 28,
-    calculate: (a: number, b: number, c: number, d: any) => {
-      return a * 10 + b * 7 + c * 4;
+    specialCalculate: (a: number, b: number, c: number, d: any) => {
+      return a + b >= 5;
     },
     major: [
       {
@@ -5540,9 +5539,8 @@ export const UniversityInfoList = [
   },
   {
     name: "嘉兴大学",
-    condition: 28,
-    calculate: (a: number, b: number, c: number, d: any) => {
-      return a * 10 + b * 7 + c * 4;
+    specialCalculate: (a: number, b: number, c: number, d: any) => {
+      return a + b >= 4 || a >= 2;
     },
     major: [
       {
@@ -5815,9 +5813,8 @@ export const UniversityInfoList = [
   },
   {
     name: "台州学院",
-    condition: 48,
-    calculate: (a: number, b: number, c: number, d: number) => {
-      return a * 10 + b * 8 + c * 6 + d * 4;
+    specialCalculate: (a: number, b: number, c: number, d: any) => {
+      return a + b >= 6;
     },
     major: [
       {
@@ -5936,9 +5933,8 @@ export const UniversityInfoList = [
   },
   {
     name: "绍兴文理学院",
-    condition: 40,
-    calculate: (a: number, b: number, c: number, d: number) => {
-      return a * 10 + b * 8 + c * 6 + d * 4;
+    specialCalculate: (a: number, b: number, c: number, d: any) => {
+      return a === 3 || a + b >= 5;
     },
     major: [
       {
@@ -6043,9 +6039,8 @@ export const UniversityInfoList = [
   },
   {
     name: "浙江外国语学院",
-    condition: 40,
-    calculate: (a: number, b: number, c: number, d: number) => {
-      return a * 15 + b * 9 + c * 3 + d * 0;
+    specialCalculate: (a: number, b: number, c: number, d: any) => {
+      return a >= 1;
     },
     major: [
       {
@@ -6192,9 +6187,8 @@ export const UniversityInfoList = [
   },
   {
     name: "宁波工程学院",
-    condition: 30,
-    calculate: (a: number, b: number, c: number, d: any) => {
-      return a * 10 + b * 5 + c * 3;
+    specialCalculate: (a: number, b: number, c: number, d: any) => {
+      return a >= 2 || a + b >= 5;
     },
     major: [
       {
@@ -6229,9 +6223,8 @@ export const UniversityInfoList = [
   },
   {
     name: "衢州学院",
-    condition: 35,
-    calculate: (a: number, b: number, c: number, d: any) => {
-      return a * 10 + b * 7 + c * 4;
+    specialCalculate: (a: number, b: number, c: number, d: any) => {
+      return a >= 3 || a + b >= 5;
     },
     major: [
       {
@@ -6602,42 +6595,42 @@ export const UniversityInfoList = [
         condition: (values: any) => {
           return true;
         },
-        lowThreeOne: "/",
+        lowThreeOne: "522",
         combinationDesc: "不限",
         admissions: 20,
         conditionDesc: "4B6C及以上",
         lowwest23: "73",
         lowwestDegreeDesc: "5B3C1D",
         lowwestGaoKao23: "540",
-        minus: "/",
+        minus: "18",
       },
       {
         name: "社会工作",
         condition: (values: any) => {
           return true;
         },
-        lowThreeOne: "/",
+        lowThreeOne: "536",
         combinationDesc: "不限",
         admissions: 10,
         conditionDesc: "4B6C及以上",
         lowwest23: "82",
         lowwestDegreeDesc: "8B1C1D",
         lowwestGaoKao23: "547",
-        minus: "/",
+        minus: "11",
       },
       {
         name: "物流管理",
         condition: (values: any) => {
           return true;
         },
-        lowThreeOne: "/",
+        lowThreeOne: "506",
         combinationDesc: "不限",
         admissions: 15,
         conditionDesc: "4B6C及以上",
         lowwest23: "81",
         lowwestDegreeDesc: "7B3C",
         lowwestGaoKao23: "539",
-        minus: "/",
+        minus: "33",
       },
       {
         name: "金融工程",
@@ -6658,56 +6651,56 @@ export const UniversityInfoList = [
         condition: (values: string) => {
           return includePhysiclAndChemical(values);
         },
-        lowThreeOne: "/",
+        lowThreeOne: "515",
         combinationDesc: "物理+化学",
         admissions: 20,
         conditionDesc: "2B8C及以上",
         lowwest23: "84",
         lowwestDegreeDesc: "8B2C",
         lowwestGaoKao23: "543",
-        minus: "/",
+        minus: "28",
       },
       {
         name: "生物工程类",
         condition: (values: string) => {
           return includePhysiclAndChemical(values);
         },
-        lowThreeOne: "/",
+        lowThreeOne: "494",
         combinationDesc: "物理+化学",
         admissions: 10,
         conditionDesc: "2B8C及以上",
         lowwest23: "87",
         lowwestDegreeDesc: "9B1C",
         lowwestGaoKao23: "542",
-        minus: "/",
+        minus: "48",
       },
       {
         name: "环境科学与工程类",
         condition: (values: string) => {
           return includePhysiclAndChemical(values);
         },
-        lowThreeOne: "/",
+        lowThreeOne: "512",
         combinationDesc: "物理+化学",
         admissions: 20,
         conditionDesc: "2B8C及以上",
         lowwest23: "79",
         lowwestDegreeDesc: "7B2C1D",
         lowwestGaoKao23: "540",
-        minus: "/",
+        minus: "28",
       },
       {
         name: "食品科学与工程类",
         condition: (values: string) => {
           return includePhysiclAndChemical(values);
         },
-        lowThreeOne: "/",
+        lowThreeOne: "514",
         combinationDesc: "物理+化学",
         admissions: 20,
         conditionDesc: "2B8C及以上",
         lowwest23: "84",
         lowwestDegreeDesc: "8B2C",
         lowwestGaoKao23: "541",
-        minus: "/",
+        minus: "27",
       },
       {
         name: "区块链工程",
@@ -6812,21 +6805,21 @@ export const UniversityInfoList = [
         condition: (values: any) => {
           return true;
         },
-        lowThreeOne: "/",
+        lowThreeOne: "531",
         combinationDesc: "不限",
         admissions: 10,
         conditionDesc: "10C及以上",
         lowwest23: "75",
         lowwestDegreeDesc: "7B3D",
         lowwestGaoKao23: "541",
-        minus: "/",
+        minus: "10",
       },
       {
         name: "广告学（中德2+2双学位班）",
         condition: (values: any) => {
           return true;
         },
-        lowThreeOne: "/",
+        lowThreeOne: "522",
         combinationDesc: "不限",
         admissions: 20,
         conditionDesc: "10C及以上",
@@ -6840,7 +6833,7 @@ export const UniversityInfoList = [
         condition: (values: any) => {
           return true;
         },
-        lowThreeOne: "/",
+        lowThreeOne: "528",
         combinationDesc: "不限",
         admissions: 10,
         conditionDesc: "10C及以上",
@@ -6854,7 +6847,7 @@ export const UniversityInfoList = [
         condition: (values: any) => {
           return true;
         },
-        lowThreeOne: "/",
+        lowThreeOne: "520",
         combinationDesc: "不限",
         admissions: 20,
         conditionDesc: "10C及以上",
@@ -6895,9 +6888,8 @@ export const UniversityInfoList = [
   },
   {
     name: "湖州学院",
-    condition: 35,
-    calculate: (a: number, b: number, c: number, d: any) => {
-      return a * 10 + b * 7 + c * 4;
+    specialCalculate: (a: number, b: number, c: number, d: any) => {
+      return a + b >= 5;
     },
     major: [
       {
@@ -6946,9 +6938,8 @@ export const UniversityInfoList = [
   },
   {
     name: "嘉兴南湖学院",
-    condition: 28,
-    calculate: (a: number, b: number, c: number, d: any) => {
-      return a * 10 + b * 7 + c * 3;
+    specialCalculate: (a: number, b: number, c: number, d: any) => {
+      return a >= 2 || a + b >= 4;
     },
     major: [
       {
@@ -6959,7 +6950,7 @@ export const UniversityInfoList = [
         lowThreeOne: "/",
         combinationDesc: "不限",
         admissions: 5,
-        conditionDesc: "A+B≥4",
+        conditionDesc: "A≥2或A+B≥4",
         lowwest23: "/",
         lowwestDegreeDesc: "/",
         lowwestGaoKao23: "560",
@@ -6973,7 +6964,7 @@ export const UniversityInfoList = [
         lowThreeOne: "/",
         combinationDesc: "不限",
         admissions: 5,
-        conditionDesc: "A+B≥4",
+        conditionDesc: "A≥2或A+B≥4",
         lowwest23: "/",
         lowwestDegreeDesc: "/",
         lowwestGaoKao23: "558",
@@ -6987,7 +6978,7 @@ export const UniversityInfoList = [
         lowThreeOne: "/",
         combinationDesc: "物理+化学",
         admissions: 5,
-        conditionDesc: "A+B≥4",
+        conditionDesc: "A≥2或A+B≥4",
         lowwest23: "67",
         lowwestDegreeDesc: "3A4B3C",
         lowwestGaoKao23: "559",
@@ -7001,7 +6992,7 @@ export const UniversityInfoList = [
         lowThreeOne: "/",
         combinationDesc: "物理+化学",
         admissions: 5,
-        conditionDesc: "A+B≥4",
+        conditionDesc: "A≥2或A+B≥4",
         lowwest23: "67",
         lowwestDegreeDesc: "3A4B3C",
         lowwestGaoKao23: "558",
@@ -7015,7 +7006,7 @@ export const UniversityInfoList = [
         lowThreeOne: "/",
         combinationDesc: "物理+化学",
         admissions: 10,
-        conditionDesc: "A+B≥4",
+        conditionDesc: "A≥2或A+B≥4",
         lowwest23: "67",
         lowwestDegreeDesc: "3A4B3C",
         lowwestGaoKao23: "553",
@@ -7029,7 +7020,7 @@ export const UniversityInfoList = [
         lowThreeOne: "/",
         combinationDesc: "物理+化学",
         admissions: 15,
-        conditionDesc: "A+B≥4",
+        conditionDesc: "A≥2或A+B≥4",
         lowwest23: "/",
         lowwestDegreeDesc: "/",
         lowwestGaoKao23: "557",
@@ -7043,7 +7034,7 @@ export const UniversityInfoList = [
         lowThreeOne: "/",
         combinationDesc: "物理+化学",
         admissions: 15,
-        conditionDesc: "A+B≥4",
+        conditionDesc: "A≥2或A+B≥4",
         lowwest23: "/",
         lowwestDegreeDesc: "/",
         lowwestGaoKao23: "548",
@@ -7053,9 +7044,8 @@ export const UniversityInfoList = [
   },
   {
     name: "温州理工学院",
-    condition: 40,
-    calculate: (a: number, b: number, c: number, d: any) => {
-      return a * 10 + b * 8 + c * 4;
+    specialCalculate: (a: number, b: number, c: number, d: any) => {
+      return a + b >= 5;
     },
     major: [
       {
@@ -7146,7 +7136,7 @@ export const UniversityInfoList = [
   },
   {
     name: "浙大宁波理工学院",
-    condition: 62,
+    condition: 60,
     calculate: (a: number, b: number, c: number, d: any) => {
       return a * 10 + b * 8 + c * 5;
     },
@@ -7597,7 +7587,7 @@ export const UniversityInfoList = [
   },
   {
     name: "宁波幼儿师范高等学院",
-    condition: 210,
+    condition: 190,
     calculate: (a: number, b: number, c: number, d: number) => {
       return a * 30 + b * 25 + c * 21 + d * 18;
     },
@@ -7769,7 +7759,7 @@ export const UniversityInfoList = [
   },
   {
     name: "宁波财经学院",
-    condition: 0,
+    condition: 40,
     calculate: (a: number, b: number, c: number, d: number) => {
       return a * 15 + b * 9 + c * 6 + d * 4;
     },
@@ -7890,9 +7880,8 @@ export const UniversityInfoList = [
   },
   {
     name: "浙江越秀外国语学院",
-    condition: 8,
-    calculate: (a: number, b: number, c: number, d: number) => {
-      return a * 10 + b * 8 + c * 6 + d * 4;
+    specialCalculate: (a: number, b: number, c: number, d: any) => {
+      return b >= 1;
     },
     major: [
       {
