@@ -8,8 +8,8 @@ import {
   Input,
   Picker,
 } from "antd-mobile";
-import { useRouter } from "next/navigation";
-import { RefObject, useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
+import { RefObject, useEffect, useState } from "react";
 import { UniversityInfoList, basicColumns } from "./constant";
 import postPic from "@/assets/post.png";
 
@@ -19,6 +19,7 @@ export default function Home() {
   const [showUniversity, setShowUniversity] = useState(false);
   const [acceptable, setAcceptable] = useState<any[]>([]);
   const [values, setValues] = useState({} as any);
+  const [form] = Form.useForm();
 
   const { push } = useRouter();
 
@@ -57,6 +58,28 @@ export default function Home() {
       setValues(_values);
     }
   };
+
+  const params = useSearchParams();
+  const combination = params.get("combination");
+  const a = params.get("a");
+  const b = params.get("b");
+  const c = params.get("c");
+  const d = params.get("d");
+  const predict = params.get("predict");
+
+  useEffect(() => {
+    if (combination && a && b && c && d && predict) {
+      form.setFieldsValue({
+        combination: [combination],
+        name1: a,
+        name2: b,
+        name3: c,
+        name4: d,
+        predict,
+      });
+      form.submit();
+    }
+  }, [combination, a, b, c, d])
 
   if (showUniversity) {
     return (
@@ -107,6 +130,7 @@ export default function Home() {
         <img className={styles.postPic} src={postPic.src} />
       </div>
       <Form
+        form={form}
         style={{
           position: "relative",
           top: "-20px",
