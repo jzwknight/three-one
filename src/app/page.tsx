@@ -47,10 +47,11 @@ export default function Home() {
 
         const condition2 = major?.some((m) => {
           if (m.condition) {
-            return m.condition(combination);
+            return m.condition(combination[0]);
           }
           return false;
         });
+
         return condition1 && condition2;
       });
       setShowUniversity(true);

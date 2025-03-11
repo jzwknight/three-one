@@ -56,11 +56,11 @@ export default function Detail() {
                 {predict > currentMajor?.lowThreeOne &&
                   currentMajor?.condition(combination)
                   ? "建议报考"
-                  : "不建议报考（高考预估分小于23年三一最低分或专业不匹配）"}
+                  : "不建议报考（高考预估分小于24年三一最低分或专业不匹配）"}
               </div>
             </Grid.Item>
             <Grid.Item className={`${styles.item} ${styles["item-key"]}`}>
-              <div>2024选科要求</div>
+              <div>2025选科要求</div>
             </Grid.Item>
             <Grid.Item className={`${styles.item} ${styles["item-value"]}`}>
               <div>{currentMajor.combinationDesc}</div>
@@ -78,7 +78,7 @@ export default function Detail() {
               <div>{currentMajor.conditionDesc}</div>
             </Grid.Item>
             <Grid.Item className={`${styles.item} ${styles["item-key"]}`}>
-              <div>23初审最低分</div>
+              <div>24初审最低分</div>
             </Grid.Item>
             <Grid.Item className={`${styles.item} ${styles["item-value"]}`}>
               <div>{currentMajor.lowwest23}</div>
@@ -90,19 +90,13 @@ export default function Detail() {
               <div>{currentMajor?.lowwestDegreeDesc}</div>
             </Grid.Item>
             <Grid.Item className={`${styles.item} ${styles["item-key"]}`}>
-              <div>对应学考等级</div>
-            </Grid.Item>
-            <Grid.Item className={`${styles.item} ${styles["item-value"]}`}>
-              <div>{currentMajor?.lowwestDegreeDesc}</div>
-            </Grid.Item>
-            <Grid.Item className={`${styles.item} ${styles["item-key"]}`}>
-              <div>23三一最低分</div>
+              <div>24三一最低分</div>
             </Grid.Item>
             <Grid.Item className={`${styles.item} ${styles["item-value"]}`}>
               <div>{currentMajor?.lowThreeOne}</div>
             </Grid.Item>
             <Grid.Item className={`${styles.item} ${styles["item-key"]}`}>
-              <div>23高考最低分</div>
+              <div>24高考最低分</div>
             </Grid.Item>
             <Grid.Item className={`${styles.item} ${styles["item-value"]}`}>
               <div>{currentMajor?.lowwestGaoKao23}</div>
